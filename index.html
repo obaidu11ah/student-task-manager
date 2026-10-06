@@ -31,6 +31,13 @@
                     placeholder="Enter task description"
                 ></textarea>
 
+                <label for="taskPriority">Task Priority</label>
+                <select id="taskPriority">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
                 <button type="submit">Add Task</button>
             </form>
 
@@ -44,6 +51,7 @@
                 <article class="task-card">
                     <h3>Complete DevOps Assignment</h3>
                     <p>Complete the Git practical assignment before the deadline.</p>
+                    <p class="task-priority">Priority: <span class="priority high">High</span></p>
                     <p class="task-status">Status: <span class="status pending">Pending</span></p>
                     <button class="toggle-status-btn">Mark as Completed</button>
                 </article>
@@ -51,6 +59,7 @@
                 <article class="task-card">
                     <h3>Prepare Presentation</h3>
                     <p>Prepare presentation slides for the next class.</p>
+                    <p class="task-priority">Priority: <span class="priority medium">Medium</span></p>
                     <p class="task-status">Status: <span class="status pending">Pending</span></p>
                     <button class="toggle-status-btn">Mark as Completed</button>
                 </article>
@@ -58,6 +67,7 @@
                 <article class="task-card">
                     <h3>Revise Git Concepts</h3>
                     <p>Review repositories, commits, branches and merging.</p>
+                    <p class="task-priority">Priority: <span class="priority low">Low</span></p>
                     <p class="task-status">Status: <span class="status pending">Pending</span></p>
                     <button class="toggle-status-btn">Mark as Completed</button>
                 </article>
