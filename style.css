@@ -48,7 +48,8 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
@@ -146,3 +147,21 @@ footer {
 .toggle-status-btn:hover {
     background-color: #333333;
 }
+
+/* Task Priority Feature Styles */
+.task-priority {
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.priority {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+}
+
+.priority.high { background-color: #e74c3c; } /* Red */
+.priority.medium { background-color: #3498db; } /* Blue */
+.priority.low { background-color: #7f8c8d; } /* Grey */

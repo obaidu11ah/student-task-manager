@@ -1,6 +1,7 @@
 const taskForm = document.getElementById("taskForm");
 const taskTitle = document.getElementById("taskTitle");
 const taskDescription = document.getElementById("taskDescription");
+const taskPriority = document.getElementById("taskPriority");
 const taskList = document.getElementById("taskList");
 const message = document.getElementById("message");
 
@@ -10,6 +11,7 @@ taskForm.addEventListener("submit", function (event) {
 
     const title = taskTitle.value.trim();
     const description = taskDescription.value.trim();
+    const priority = taskPriority.value;
 
     if (title === "" || description === "") {
         message.textContent = "Please enter both task title and description.";
@@ -17,20 +19,27 @@ taskForm.addEventListener("submit", function (event) {
         return;
     }
 
+    let priorityClass = "medium";
+    if (priority === "High") priorityClass = "high";
+    if (priority === "Low") priorityClass = "low";
+
     const taskCard = document.createElement("article");
     taskCard.className = "task-card";
 
-    // Build the task content including the new status feature
+    // Build the task content including priority and status features
     taskCard.innerHTML = `
         <h3>${title}</h3>
         <p>${description}</p>
+        <p class="task-priority">Priority: <span class="priority ${priorityClass}">${priority}</span></p>
         <p class="task-status">Status: <span class="status pending">Pending</span></p>
         <button class="toggle-status-btn">Mark as Completed</button>
     `;
 
     taskList.appendChild(taskCard);
-
     taskForm.reset();
+    
+    // reset priority back to default Medium after submit
+    taskPriority.value = "Medium";
 
     message.textContent = "Task added successfully.";
     message.style.color = "green";
